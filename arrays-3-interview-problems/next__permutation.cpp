@@ -32,6 +32,10 @@ template<class T> bool uax(T &a, T b) { return a < b ? (a = b, true) : false;}
 const i64 P = 1000000000 + 7;
 
 vi solve(vi &A) {
+
+    // using default predefined function of c++
+    // next_permutation(A); return A;
+    
     int n = sz(A);
     int i, j;
     for(i = n-2; i >= 0; i -= 1) if(A[i] < A[i+1]) break;
