@@ -1,0 +1,49 @@
+(x + y) mod m = (x mod m + y mod m) mod m
+(x − y) mod m = (x mod m − y mod m) mod m
+(x · y) mod m = (x mod m· y mod m) mod m
+x^n mod m = (x mod m)^n mod m
+
+
+
+// efficient computation for x ^ n mod m
+int modpow(int x, int n, int m) {
+    if(n == 0) return 1 % m;
+    long long u = modpow(x, n/2, m);
+    u = (u * u) % m;
+    if(n % 2 == 1) u = (u * x) % m;
+    return u;
+}
+
+fermats theorm states that 
+
+// where m is prime and x and m are co-prime
+x ^ m - 1 mod m = 1; - fermats theorm
+
+x * x ^ -1 mod m = 1;
+
+using fermats theorm 
+x * x ^ -1 mod m = x ^ m - 1 mod m using fermats theorm 
+
+=> x ^ -1 mod m = x ^ m - 2 mod m (modulo inverse).
+
+
+Diophanite Equation:
+
+ax + by = c;
+
+solutions exists if c % gcd(a, b) == 0;
+
+solution to Diophanite equation are: (x + kb / gcd(a, b), y - ka / gcd(a, b));
+
+where k is an integer.
+
+Lagrange’s theorem
+Lagrange’s theorem states that every positive integer can be represented as a
+sum of four squares, i.e., 
+a^2 + b^2 + c^2 + d^2
+. For example, the number 123 can be
+represented as the sum 8^2+5^2+5^2+3^2.
+
+Wilson Theorm: 
+A number n is prime if 
+(n-1)! mod m = n-1;
