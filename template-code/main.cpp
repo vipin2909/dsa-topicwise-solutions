@@ -31,6 +31,14 @@ template<class T> bool uax(T &a, T b) { return a < b ? (a = b, true) : false;}
 
 const i64 P = 1000000000 + 7;
 
+int modpow(int A, int B) {
+    if(B == 0) return (1%P);
+    i64 u = modpow(A, B/2);
+    u = (u * u) % P;
+    if(B&1) u = (u * A) % P;
+    return (int)(u % P);
+}
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
