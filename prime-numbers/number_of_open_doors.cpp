@@ -15,7 +15,7 @@ int solve(int n) {
 int main() {
     int n;
     cin >> n;
-    int res = solve(A);
+    int res = solve(n);
     cout << "Result: " << res << '\n';
     return 0;
 }
