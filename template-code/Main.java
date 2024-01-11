@@ -27,31 +27,8 @@ public class Main {
         return Long.parseLong(next());
     }
 
-    static void findAllPrimes(int A, ArrayList<Integer> res) throws IOException {
-        int[] arr = new int[A+1];
-        Arrays.fill(arr, 0);
-        for(int i = 2; i * i <= A; i += 1) {
-            if(arr[i] == 0) {
-                for(int j = i * i; j <= A; j += i) {
-                    arr[j] = 1;
-                }
-            }
-        }
-
-        for(int i = 2; i <= A; i++) {
-            if(arr[i] == 0) res.add(i);
-        }
-    }
-
     public static void solve() throws IOException {
-        int A = nextInt();
-        ArrayList<Integer> res = new ArrayList<>();
-        findAllPrimes(A, res);
-        for(int ele: res) {
-            out.print(ele + " ");
-        }
-        out.println();
-        
+        // your code goes here
     }
 
     public static void main(String[] args) {
