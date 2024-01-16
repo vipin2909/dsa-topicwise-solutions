@@ -35,11 +35,7 @@ public class MedianMatrix {
                 lo = mid + 1;
             }
         }
-
         return ans;
-        
-
-
     }    
 }
 
